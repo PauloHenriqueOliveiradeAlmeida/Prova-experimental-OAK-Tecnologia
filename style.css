@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+	--black: #141414;
+	--opacity-black: #14141467;
+	--secondary: #2c2c2c;
+	--white: #F1F1F1;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: "Poppins", sans-serif;
+	color: var(--black);
+}
+
+body {
+	background-color: var(--white);
+}
+
+h1,
+h3 {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.container {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.create-product-popup {
+	position: fixed;
+	z-index: 1;
+	width: 90%;
+	padding: 2rem;
+	background-color: var(--white);
+	box-shadow: 0px 5px 10px var(--opacity-black);
+	border-radius: .5rem;
+}
+
+.create-product-popup form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+
+.create-product-popup form input,
+.create-product-popup form textarea {
+	padding: .5rem;
+	border-radius: .5rem;
+	background-color: var(--white);
+	border: 1px solid var(--opacity-black);
+	outline: none;
+	font-size: .8rem;
+}
+
+.create-product-popup form input:focus,
+.create-product-popup form textarea:focus {
+	border-width: 2px;
+}
+
+.create-product-popup form textarea {
+	resize: vertical;
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+}
+
+.button,
+.bubble-button {
+	font-weight: bold;
+	border: none;
+	background-color: var(--black);
+	color: var(--white);
+	transition: background-color .2s linear;
+	cursor: pointer;
+}
+
+.button:hover,
+.bubble-button:hover {
+	background-color: var(--secondary);
+}
+
+.button {
+	border-radius: .5rem;
+	margin-top: 2rem;
+	padding: 1rem;
+	font-size: .9rem;
+}
+
+.bubble-button {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	border-radius: 100%;
+	font-size: 1.4rem;
+	width: 4rem;
+	height: 4rem;
+}
+
+.table-container {
+	width: 80%;
+}
+
+.view-product-table {
+	display: block;
+	margin: 0 auto;
+	height: 20rem;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+	scrollbar-width: none;
+}
+
+.view-product-table thead {
+	display: none;
+}
+
+.product_table_body {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.product_table_body tr {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem 1rem;
+	border-radius: .5rem;
+	background-color: black;
+	color: var(--white);
+	scroll-snap-align: start;
+}
+
+@media (width >=768px) {
+	.table-container {
+		height: 30rem;
+		overflow-y: scroll;
+		scroll-snap-type: y mandatory;
+		border-radius: .5rem;
+	}
+
+	.view-product-table {
+		width: 100%;
+		text-align: center;
+		display: table;
+		border-radius: 5rem;
+		border-collapse: collapse;
+	}
+
+	.view-product-table thead {
+		position: sticky;
+		top: 0px;
+		display: table-header-group;
+		color: var(--white);
+		background-color: var(--black);
+	}
+
+	.view-product-table th,
+	.view-product-table td {
+		padding: .5rem 0px;
+	}
+
+	.product_table_body {
+		display: table-row-group;
+	}
+
+	.product_table_body tr {
+		display: table-row;
+		scroll-margin: 3rem;
+	}
+
+	.product_table_body tr:nth-child(odd) {
+		color: var(--black);
+		background-color: var(--white);
+	}
+}

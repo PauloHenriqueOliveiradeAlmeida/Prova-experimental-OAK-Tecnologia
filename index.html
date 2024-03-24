@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css">
+		<title>Prova experimental - Oak Tecnologia</title>
+	</head>
+	<body id="body">
+		<div class="container">
+			<h1>Gerenciador de produtos</h1>
+			<div class="create-product-popup" id="create_product_popup" style="display: none;">
+				<form id="create_product_form">
+					<h3>Cadastrar novo produto</h3>
+					<div class="field">
+						<label for="name">Nome:</label>
+						<input type="text" id="name" name="name"/>
+					</div>
+
+					<div class="field">
+						<label for="description">Descrição:</label>
+						<textarea cols="30" rows="5" id="description" name="description"></textarea>
+					</div>
+
+					<div class="field">
+						<label for="price">Valor:</label>
+						<input type="number" step="0.01" id="price" name="price" />
+					</div>
+
+					<div class="field">
+						<label>Disponível para venda:</label>
+
+						<div>
+							<input type="radio" id="available_sale_yes" name="available_sale" checked/>
+							<label for="available_sale_yes">Sim</label>
+						</div>
+
+						<div>
+							<input type="radio" id="available_sale_no" name="available_sale"/>
+							<label for="available_sale_no">Não</label>
+						</div>
+					</div>
+
+					<button class="button">Cadastrar novo produto</button>
+				</form>
+			</div>
+
+			<div class="table-container">
+				<table class="view-product-table">
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Valor</th>
+						</tr>
+						<tbody class="product_table_body" id="product_table_body">
+						</tbody>
+					</thead>
+				</table>
+			</div>
+
+			<button class="bubble-button" id="add_new_product_button">+</button>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
